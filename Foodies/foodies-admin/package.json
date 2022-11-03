@@ -1,0 +1,47 @@
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "test:unit": "vitest --environment jsdom",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "dev": "vite",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.3",
+    "@headlessui/vue": "^1.7.0",
+    "@heroicons/vue": "^2.0.10",
+    "@mdi/font": "5.9.55",
+    "@vue-hero-icons/outline": "^1.7.2",
+    "@vueuse/core": "^9.2.0",
+    "flowbite": "^1.5.3",
+    "flowbite-vue": "^0.0.5",
+    "pinia": "^2.0.22",
+    "pinia-plugin-persistedstate": "^2.1.1",
+    "roboto-fontface": "*",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2",
+    "vue2-google-maps": "^0.10.7",
+    "vuetify": "^3.0.0-beta.0",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/test-utils": "^2.0.2",
+    "autoprefixer": "^10.4.8",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "jsdom": "^20.0.0",
+    "postcss": "^8.4.16",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.1.8",
+    "vite": "^3.0.8",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12",
+    "vitest": "^0.18.1",
+    "vue-cli-plugin-vuetify": "~2.5.5"
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app-container">
+
+        <div class="content-wrapper d-flex position-relative">
+            <div id="left-navigation" class="border-end  bg-white px-2">
+                <div class="px-1 py-3 d-flex justify-content-between border-bottom">
+
+                    <img id="show" src="images/esq_top_logo.png" alt="logo" class="me-5" style="max-width: 50px;">
+                    <button id="toggle" class="border rounded-pill bg-white"><i
+                            class="fas fa-chevron-left text-primary"></i></button>
+                </div>
+                <ul class="nav flex-column pt-3">
+                    <li class="nav-item">
+                        <a class="nav-link active text-gray-dark toggle-link" data-bs-toggle="collapse"
+                            href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <span><i class="fas fa-tachometer-alt text-primary"></i></span>
+                            <span class="text">Dashboard</span>
+                            <i class="fas fa-chevron-down ms-auto fs-6 down-arrow"></i>
+                        </a>
+
+                        <ul class="collapse in show submenu list-styled ps-0" id="collapseExample">
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-dark" href="index.html">
+                                    <span><i class="fas fa-desktop text-primary"></i></span>
+                                    <span class="text">System Metrics</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-dark" href="files.html">
+                                    <span><i class="fas fa-file text-primary"></i> </span>
+                                    <span class="text">IST-Files</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-dark" href="IST_file_system_disk.html">
+                                    <span><i class="fas fa-hard-drive text-primary"></i> </span>
+                                    <span class="text">IST file system disk space</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-dark" href="IST_queue.html">
+                                    <span><i class="fas fa-chart-bar text-primary"></i> </span>
+                                    <span class="text">IST queue</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-dark" href="IST_Saf_destination.html">
+                                    <span><i class="fas fa-arrows-turn-to-dots text-primary"></i> </span>
+                                    <span class="text">IST Saf destination</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-gray-dark" href="logs.html">
+                                    <span><i class="fas fa-arrows-turn-to-dots text-primary"></i> </span>
+                                    <span class="text">Logs</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="content-wraper w-100 position-relative">
+                <nav class="navbar navbar-expand-lg navbar-light py-0 bg-white rounded-0 border-bottom">
+                    <div class="container-fluid">
+                        <h6 class="m-0" id="show">Gafana Dashboard</h6>
+                        <div id="navbarSupportedContent">
+                            <ul class="navbar-nav flex-row ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link py-3" aria-current="page" href="#"><i
+                                            class="fas fa-bell"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-3 " aria-current="page" href="#"><i class="fas fa-th"></i></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle py-3" aria-current="page" id="navbarDropdown"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                            class="fas fa-user-circle"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow"
+                                        aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="login.html">Logout</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container-fluid pt-3 content-scroll pb-5">
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <h5 class="pb-2">System Metrics</h5>
+                            <div class="card shadow border-0 rounded-3 mb-3">
+                                <div class="card-body d-flex">
+                                    <iframe id="iframe" src="http://localhost:3000/d/vRze2DVVk/wmi-dashboard?orgId=1&refresh=5s&kiosk"
+                                        width="100%" height="500" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

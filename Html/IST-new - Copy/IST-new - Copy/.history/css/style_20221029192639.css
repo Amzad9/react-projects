@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+.navbar .nav-link {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+.navbar .nav-link i {
+  color: #bdbdbd;
+  font-size: 20px;
+}
+.navbar .nav-link:hover {
+  background-color: #f6f6f6;
+}
+
+.content-wrapper #left-navigation {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 100vh;
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.content-wrapper #left-navigation button {
+  width: 28px;
+  height: 28px;
+}
+.content-wrapper #left-navigation .submenu {
+  list-style-type: none;
+}
+.content-wrapper #left-navigation .nav i {
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  color: #212121;
+}
+.content-wrapper #left-navigation .nav .nav-item .nav-link {
+  padding: 0.3rem 0.5rem !important;
+  display: flex;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  transition: all 0.4s linear;
+  font-size: 14px;
+}
+.content-wrapper #left-navigation .nav .nav-item .nav-link:hover {
+  background-color: #f6f6f6;
+}
+.content-wrapper #left-navigation .nav .nav-item .nav-link .text {
+  padding-left: 0.6rem;
+  display: flex;
+}
+.content-wrapper #left-navigation .nav .nav-item .nav-link.active {
+  background-color: #4F629A;
+  box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
+}
+.content-wrapper #left-navigation .nav .nav-item .nav-link.active i {
+  color: #fff !important;
+}
+.content-wrapper #left-navigation .nav .nav-item .nav-link.active .text {
+  color: #fff;
+}
+.content-wrapper #left-navigation::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  background-color: #fff;
+  width: 0px;
+  height: 0;
+}
+.content-wrapper #left-navigation::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #F5F5F5;
+}
+.content-wrapper #left-navigation::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #C1C1C1;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.content-scroll {
+  position: absolute;
+  top: 56px;
+  overflow-y: scroll;
+  height: calc(100vh - 56px);
+}
+
+.card-body {
+  padding: 12px !important;
+}
+
+.iframe {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=style_20221029192639.css.map */

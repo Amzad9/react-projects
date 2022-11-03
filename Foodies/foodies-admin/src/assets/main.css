@@ -1,0 +1,12 @@
+@import "./base.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .v-navigation-drawer__scrim{
+  position: fixed !important;
+} */
+
+.v-navigation-drawer__scrim{
+  position: fixed !important;
+}

@@ -1,0 +1,14 @@
+.login-form {
+  max-width: 380px;
+  width: 380px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+.login-form input, .login-form select, .login-form span {
+  font-size: 12px !important;
+}
+.login-form p {
+  font-size: 14px !important;
+}
+.login-form button {
+  font-size: 13px !important;
+}/*# sourceMappingURL=login.css.map */
