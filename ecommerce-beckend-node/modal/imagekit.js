@@ -1,25 +1,17 @@
 const mongoose = require("mongoose");
 
 const imageKitSchema = mongoose.Schema({
-    // _id: mongoose.Schema.Types.ObjectId,
-    // conllectIONId: {
-    //     type: String,
-    //     required: [true, "ItemId is required"], 
-    // },
-      imageKit: {
-        fileId: { type: String },
-        name: { type: String },
-        size: { type: Number },
-        filePath: { type: String },
-        url: { type: String },
-        fileType: { type: String },
-        height: { type: Number },
-        width: { type: Number },
-        orientation: { type: Number },
-        thumbnailUrl: { type: String },
+  prodId: {
+        type: mongoose.Schema.Types.ObjectId,
+        // required: [true, "ItemId is required"], 
+        ref:'product'
+    },
+    images: {
+      type:Object,
+      required:true
        },
 
-    createdBy: {
+      createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "admin",
         default: null,

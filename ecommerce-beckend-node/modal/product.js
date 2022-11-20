@@ -1,10 +1,6 @@
 
 const mongoose = require("mongoose");
 
-
-let Variants = new mongoose.Schema({
-    color: String,
-});
 const productSchema = mongoose.Schema({
     name: {
         type: String,
@@ -15,14 +11,9 @@ const productSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "category"
     },
-    coverImage:{
-        type: String,
-        default: ""
-    },
-    imageKit: {
+    images: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "imagekit",
-        default: null,
     },
     qty: {
         type: Number,
@@ -36,9 +27,6 @@ const productSchema = mongoose.Schema({
     actualPrice:{
      type: Number,
      required: [true, "actualPrice is required"],
-    },
-    variant:{
-        type: mongoose.Schema.Types.Mixed,
     },
     size:{
         type: mongoose.Schema.Types.Mixed,

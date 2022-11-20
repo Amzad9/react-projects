@@ -24,6 +24,13 @@ app.use("/api/image", imageupload);
 //user 
 const userLogin = require("./routes/user");
 app.use("/api", userLogin);
+// cart api
+const cart = require("./routes/cart");
+app.use("/api", cart);
+
+//order api
+const order = require("./routes/order");
+app.use("/api", order);
 
 app.use((req, res, next)=>{
  res.status(404).send("<h1>Page not found</h1>")

@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 const pModal = require("../modal/product");
+const imageKit = require("../modal/imagekit");
 
 // add product
 exports.product = (req, res, next) => {
-  console.log(req.body.file)
+  console.log(req.body)
   const admin = new pModal({
     name: req.body.name,
     category: req.body.category,
-    img: req.body.file,
+    images: req.body.imagekit,
     qty: req.body.qty,
     price: req.body.price,
     actualPrice: req.body.actualPrice,
-    variant: req.body.variant,
     size: req.body.size,
     stats: req.body.stats,
     rating: req.body.rating,
@@ -47,7 +47,7 @@ exports.productList = async (req, res, next) => {
       filter["name"] = new RegExp(req.query.name, "i");
     }
     const result = await pModal
-      .find(filter).populate([{path:"category", select: "name createdAt"}])
+      .find(filter).populate([{path:"category", select: "name createdAt"},{path:"images"}])
       .sort({ name: "asc" })
       .skip(skip)
       .limit(limitRecords);

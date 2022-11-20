@@ -1,29 +1,27 @@
 
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const signUp = require("../modal/admin")
+const signupModal = require("../modal/admin")
 const md5 = require("md5");
 
 //add user
 exports.signUp = async (req, res, next) => {
-  const { name, email, password, dialCode, contact, type } = req.body;
+  const { name, email, password, contact } = req.body;
   console.log(req.body)
-  let user = await signUp.findOne({ name });
-  let emailId = await signUp.findOne({ email });
+  let user = await signupModal.findOne({ name });
+  let emailId = await signupModal.findOne({ email });
 
   if (user) {
     return res.status(400).json({ ok: false, msg: "User Already exit" });
   } else if (emailId) {
     return res.status(400).json({ ok: false, msg: "Email Already exit" });
   } else {
-    let userInfo = new signUp({
+    let userInfo = new signupModal({
       _id: new mongoose.Types.ObjectId(),  
       name: name,
       email: email,
       password: md5(password),
-      dialCode: dialCode,
       contact: contact,
-      type: type,
     });
     
     const message = "User added successful.";
@@ -38,10 +36,10 @@ exports.signUp = async (req, res, next) => {
 exports.login =async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    //console.log(req.body);
+    console.log(req);
     const pass = md5(password);
     const filter = { email, password: pass };
-    let user = await signUp.findOne(filter);
+    let user = await signupModal.findOne(filter);
     if (!user) {
         console.log({user})
       return res.status(401).json({ message: "Authentication failed." });
@@ -62,7 +60,7 @@ exports.login =async (req, res, next) => {
 };
 exports.saveResetPassword = async (req, res) => {
   const authorization = req.headers.authorization;
-  const user = await signUp.findOne(req.params.id);
+  const user = await signupModal.findOne(req.params.id);
   const private_key=process.env.SECRET_KEY
   const payload = jwt.verify(authorization, private_key);
   console.log(payload.userData._id)
@@ -85,7 +83,7 @@ exports.saveResetPassword = async (req, res) => {
 };
 exports.forgotPassword = async (req, res) => {
   const { name, email, password } =req.body;
-  const user = await signUp.findOne({ email });
+  const user = await signupModal.findOne({ email });
  console.log(user)
   if(!user){
     return res.status(401).json({message: 'User does not exits'})

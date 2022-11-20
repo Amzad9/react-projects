@@ -6,12 +6,10 @@ const CartSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
-    products: [
+    items: [
       {
-        productId: Number,
-        quantity: Number,
-        name: String,
-        price: Number
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "product"
       }
     ],
     active: {
