@@ -15,15 +15,9 @@ function Home() {
   }
   console.log(str)
   const fetchProduct = (title) => {
-    const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': 'b5827700e1msha890d46801eab89p1e308ajsnb12617f4810a',
-          'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-        }
-      };
+   
 
-      fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search?query=${title}&number=10&offset=0&minCalories=0&maxCarbs=100&minCarbs=0&maxFat=100&minFat=0&maxProtein=100&minProtein=0&maxCalories=5000`, options)
+      fetch(options)
         .then(response => response.json())
         .then(response => {
             console.log({response})
