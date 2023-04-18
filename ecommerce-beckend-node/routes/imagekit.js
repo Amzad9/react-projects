@@ -7,7 +7,15 @@ const checkAuth = require("../middleware/verify_token")
 
 const imagekitController = require('../controllers/imagekit');
 
-const storage = multer.diskStorage({
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, 'uploads/');
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, Date.now()+'-'+file.originalname);
+//     }
+// });
+const storage = multer.memoryStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads/');
     },

@@ -25,7 +25,6 @@ export const wishListSlice = createSlice({
         setFilter: (state, action) => {
             state.search =  action.payload
         }
-
     }
 })
 

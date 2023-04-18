@@ -47,7 +47,7 @@ exports.productList = async (req, res, next) => {
       filter["name"] = new RegExp(req.query.name, "i");
     }
     const result = await pModal
-      .find(filter).populate([{path:"category", select: "name createdAt"},{path:"images"}])
+      .find(filter).populate([{path:"category", select: "name createdAt"},{path:"images", select: "images createdAt"}])
       .sort({ name: "asc" })
       .skip(skip)
       .limit(limitRecords);

@@ -1,23 +1,4 @@
-// <script>
-// export default {
-//   data() {
-//     return {
-//       carts: []
-//     };
-//   },
-//   computed:{
-//     countItem(){
-//       return this.carts.length
-//     }
-//   },
-//    created(){
-//      if(localStorage.getItem('addcart')){
-//        this.carts = JSON.parse(localStorage.getItem('addcart'));
-//        console.log("items", this.carts)
-//      }
-//   },
-// }
-// </script>
+
 <script setup>
 import { ref, onMounted, watchEffect, computed } from 'vue';
 
@@ -37,6 +18,7 @@ const countLenght = computed( () => carts.value.length)
 
   watchEffect(() => {
     cartdata()
+    console.log(carts.value)
   })
 
 </script>

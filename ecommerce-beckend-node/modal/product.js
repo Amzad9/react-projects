@@ -22,11 +22,11 @@ const productSchema = mongoose.Schema({
     },
     price:{
         type: Number,
-        required: [true, "price is required"],
+        required: [false, "price is required"],
     },
     actualPrice:{
      type: Number,
-     required: [true, "actualPrice is required"],
+     required: [false, "actualPrice is required"],
     },
     size:{
         type: mongoose.Schema.Types.Mixed,

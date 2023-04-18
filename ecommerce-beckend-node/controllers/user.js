@@ -25,7 +25,6 @@ exports.userSignUp = async (req, res, next) => {
       contact: contact,
       type: type,
     });
-    
     const message = "User added successful.";
     await userInfo.save().then((result) => {
       console.log(result);
